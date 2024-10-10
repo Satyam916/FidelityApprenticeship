@@ -137,5 +137,30 @@ join customers c on o.customer_id=c.customer_id
 join hotel_details h on o.hotel_id=h.hotel_id
 order by o.order_id asc;
 
+--10.Pizza Store
+create table pizza(
+pizza_id varchar(10) primary key,
+cust_id varchar(10),
+partner_id varchar(10),
+pizza_name varchar(15),
+pizza_type varchar(15),
+order_date date,
+amount int,
+foreign key(cust_id) references customer(cust_id),
+foreign key(partner_id) references delivery_partner(partner_id)
+);
+
+insert into pizza 
+values
+('piz001','CUST001','p101','Margherita','Extra Large','2024-10-01',1000),
+('piz002','CUST002','p102','Pepperoni','Large','2024-09-03',800),
+('piz003','CUST003','p103','Veggie','Extra Large','2024-09-05',1200);
+
+update pizza
+set amount=amount*0.97
+where pizza_type='Extra Large';
+
+select *from pizza where pizza_type='Extra Large';
+
 
 
