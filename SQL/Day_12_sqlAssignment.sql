@@ -100,7 +100,6 @@ foreign key(hotel_id) references hotel_details(hotel_id),
 foreign key(partner_id) references delivery_partners(partner_id)
 );
 
-truncate table orders;
 insert into orders
 values
 ('ord1001','CUST1001','Ht1001','p101','2024-10-01',500),
