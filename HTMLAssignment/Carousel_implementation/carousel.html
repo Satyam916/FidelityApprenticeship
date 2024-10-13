@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Carousel</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS for additional styling -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 600px; /* Adjust image height */
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Custom styles for captions */
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for caption */
+            padding: 20px;
+            border-radius: 10px;
+            left: 10%;
+            right: 10%;
+            bottom: 20px;
+            text-align: center;
+        }
+
+        .carousel-caption h5 {
+            font-size: 2.5em;
+            color: #d4af37; /* Gold color for headings */
+        }
+
+        .carousel-caption p {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        /* Styling carousel indicators */
+        .carousel-indicators button {
+            background-color: #d4af37; /* Gold color for indicators */
+        }
+
+        /* Custom styles for control buttons */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: invert(100%); /* White-colored control arrows */
+        }
+
+        /* Increase width and move carousel down */
+        .carousel-container {
+            max-width: 1200px; /* Increased max-width for a wider carousel */
+            margin: 40px auto;  /* Center it horizontally and add margin on top to move it down */
+        }
+
+        /* Custom styles for navbar */
+        .navbar-custom {
+            background-color: #343a40; /* Dark background for navbar */
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: white;
+            font-weight: 500;
+            font-size: 1.1em;
+        }
+
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #d4af37; /* Gold hover color */
+        }
+
+        .navbar-custom .navbar-brand {
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background-color: #d4af37; /* Gold button color */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <!-- Navigation Links on the Left Side -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Register and Login buttons on the Right Side -->
+        <div class="d-flex">
+            <a href="#" class="btn btn-custom me-2">Register</a>
+            <a href="#" class="btn btn-outline-light">Login</a>
+        </div>
+
+        <!-- Toggle button for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Centering the carousel with Bootstrap classes -->
+<div class="d-flex justify-content-center">
+    <div id="bakeryCarousel" class="carousel slide carousel-container" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#bakeryCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <!-- Chocolate Slide -->
+            <div class="carousel-item active">
+                <img src="images/chocolates.jpg" class="d-block w-100" alt="Chocolates">
+                <div class="carousel-caption">
+                    <h5>Delicious Chocolates</h5>
+                    <p>Indulge in our rich, handcrafted chocolates for every occasion.</p>
+                </div>
+            </div>
+
+            <!-- Cookies Slide -->
+            <div class="carousel-item">
+                <img src="images/cookies.jpg" class="d-block w-100" alt="Cookies">
+                <div class="carousel-caption">
+                    <h5>Freshly Baked Cookies</h5>
+                    <p>Experience the warmth and sweetness of our soft, golden cookies.</p>
+                </div>
+            </div>
+
+            <!-- Bakery Slide -->
+            <div class="carousel-item">
+                <img src="images/bakery.jpg" class="d-block w-100" alt="Bakery Items">
+                <div class="carousel-caption">
+                    <h5>Assorted Bakery Treats</h5>
+                    <p>From cakes to pastries, find something for every sweet tooth.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#bakeryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bakeryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Bootstrap JS (CDN) and Popper.js for carousel functionality -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
